@@ -160,7 +160,7 @@ bool CheckDumpIntegrity(const std::wstring & dumpName, const std::wstring & modu
         return false;
     }
     if (memcmp(lpModuleBase, lpDumpBase, dwFileSize) != 0) {
-        std::cout << "dump file contents do not match module contents!" << std::endl;
+        std::cout << "error!" << std::endl;
         FreeLibrary(hModule);
         VirtualFree(lpDumpBase, 0, MEM_RELEASE);
         CloseHandle(hDumpFile);
